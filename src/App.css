@@ -1,6 +1,6 @@
 .Page {
   text-align: center;
-  background-image: url(/images/bg-pattern.svg);
+  background-image: url(/src/images/bg-pattern.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   min-height: 100vh;
