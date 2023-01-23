@@ -12,6 +12,9 @@
   min-height: 450px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 16px;
+}
+
+.Top {
   padding: 24px;
 }
 
@@ -41,4 +44,53 @@
 .PriceContainer span:nth-child(2) {
   text-transform: lowercase;
   padding-bottom: 60px;
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 5px;
+  border: 1px solid hsla(225, 20%, 60%, 0.11);
+}
+
+.Bottom {
+  padding: 0 24px;
+  color: hsl(227, 35%, 25%);
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.Bottom ul {
+  padding: 12px 24px;
+  list-style-type: none;
+  list-style: none;
+}
+
+.Bottom li {
+  height: 30px;
+}
+
+.TrialBtn {
+  align-self: center;
+  text-align: center;
+  height: 45px;
+  width: 185px;
+  border-radius: 25px;
+  border: none;
+  background-color: hsl(227, 35%, 25%);
+  color: hsl(226, 100%, 87%);
+  letter-spacing: 0.05em;
+  outline: none;
+  cursor: pointer;
+}
+
+.TrialBtn:hover {
+  transition: 0.3s ease all;
+  color: white;
+}
+
+.Bottom span {
+  padding-left: 6px;
 }

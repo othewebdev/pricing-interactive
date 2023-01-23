@@ -1,0 +1,19 @@
+h1,
+p {
+  padding: none;
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  padding: 12px 0;
+  font-size: 20px;
+}
+
+.HeaderContainer {
+  color: hsl(227, 35%, 25%);
+  margin: 36px 0;
+}
