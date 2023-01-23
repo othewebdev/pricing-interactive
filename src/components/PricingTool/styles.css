@@ -13,12 +13,6 @@
   border-radius: 16px;
 }
 
-@media screen and (min-width: 700px) {
-  .Container {
-    min-width: 700px;
-  }
-}
-
 .Top {
   padding: 24px;
 }
@@ -59,12 +53,6 @@ hr {
   margin-top: 30px;
   margin-bottom: 5px;
   border: 1px solid hsla(225, 20%, 60%, 0.11);
-}
-
-@media screen and (max-width: 700px) {
-  hr {
-    margin-top: 0px;
-  }
 }
 
 .Bottom {
@@ -113,4 +101,19 @@ hr {
 .MobilePriceContainer {
   font-weight: 800;
   margin: 25px 0;
+}
+
+@media screen and (min-width: 720px) {
+  .Container {
+    min-width: 700px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  hr {
+    margin-top: 0px;
+  }
+  .Header {
+    justify-content: center;
+  }
 }

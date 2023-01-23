@@ -8,9 +8,13 @@ const PricingTool = () => {
   const [price, setPrice] = useState(8);
   const [pageviews, setPageviews] = useState("10k");
   const [isYearly, setIsYearly] = useState(false);
+  const [isMonthly, setMonthly] = useState(price);
+  const [isMobile, setIsMobile] = useState(false);
   const optionLabels = ["yes", "no"];
 
-  const [isMobile, setIsMobile] = useState(false);
+  const handleButton = () => {
+    window.location.reload(false);
+  };
 
   const handleResize = () => {
     if (window.innerWidth < 720) {
@@ -46,10 +50,6 @@ const PricingTool = () => {
     }
   }, [price]);
 
-  const handleButton = () => {
-    window.location.reload(false);
-  };
-
   return (
     <div className="Container">
       <div className="Top">
@@ -57,7 +57,7 @@ const PricingTool = () => {
           <span className="Pageviews">{pageviews} pageviews</span>
           {!isMobile && (
             <div className="PriceContainer">
-              <span>${price}.00 </span>
+              <span>${isYearly ? price * 0.75 : price}.00 </span>
               <span>{isYearly ? " / year" : " / month"}</span>
             </div>
           )}
@@ -66,17 +66,18 @@ const PricingTool = () => {
           currentPrice={price}
           updateMainPrice={setPrice}
           resetYearly={setIsYearly}
-          isYearly
         />
         {isMobile && (
           <div className="MobilePriceContainer">
-            <span>${price}.00 </span>
+            <span>${isYearly ? price * 0.75 : price}.00 </span>
             <span>{isYearly ? " / year" : " / month"}</span>
           </div>
         )}
         <Toggle
           id="yearly"
+          isMobile
           checked={isYearly}
+          setIsYearly
           onChange={setIsYearly}
           optionLabels
         />

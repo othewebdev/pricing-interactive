@@ -3,12 +3,7 @@ import InputRange from "react-input-range";
 import "./styles.css";
 import "react-input-range/lib/css/index.css";
 
-const RangeSlider = ({
-  currentPrice,
-  updateMainPrice,
-  resetYearly,
-  isYearly,
-}) => {
+const RangeSlider = ({ currentPrice, updateMainPrice, resetYearly }) => {
   const priceFilter = (value) => {
     switch (value) {
       case 20:
@@ -28,7 +23,6 @@ const RangeSlider = ({
 
   const updatePrice = (updatedPrice) => {
     updateMainPrice(updatedPrice);
-    resetYearly(false);
   };
 
   return (

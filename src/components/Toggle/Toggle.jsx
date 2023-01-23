@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-const Toggle = ({ id, checked, onChange, optionLabels }) => {
+const Toggle = ({ id, checked, onChange, optionLabels, isMobile }) => {
   return (
     <div className="ToggleContainer">
       <label>Monthly Billing</label>
@@ -24,7 +24,7 @@ const Toggle = ({ id, checked, onChange, optionLabels }) => {
         </label>
       </div>
       <label>Yearly Billing</label>
-      <small className="discount">25% yearly</small>
+      <small className="discount">{isMobile ? "-25%" : "25% yearly"}</small>
     </div>
   );
 };

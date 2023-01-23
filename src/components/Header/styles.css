@@ -18,8 +18,15 @@ p {
   margin: 36px 0;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 720px) {
+  .HeaderContainer {
+    color: hsl(227, 35%, 25%);
+    margin: 48px 0;
+  }
   h1 {
-    font-size: 28px;
+    font-size: 24px;
+  }
+  .p {
+    font-size: 12px;
   }
 }
