@@ -10,6 +10,20 @@ const PricingTool = () => {
   const [isYearly, setIsYearly] = useState(false);
   const optionLabels = ["yes", "no"];
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth < 720) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  });
+
   useEffect(() => {
     switch (price) {
       case 8 || 6:
@@ -41,10 +55,12 @@ const PricingTool = () => {
       <div className="Top">
         <div className="Header">
           <span className="Pageviews">{pageviews} pageviews</span>
-          <div className="PriceContainer">
-            <span>${price}.00 </span>
-            <span>{isYearly ? " / year" : " / month"}</span>
-          </div>
+          {!isMobile && (
+            <div className="PriceContainer">
+              <span>${price}.00 </span>
+              <span>{isYearly ? " / year" : " / month"}</span>
+            </div>
+          )}
         </div>
         <Slider
           currentPrice={price}
@@ -52,6 +68,12 @@ const PricingTool = () => {
           resetYearly={setIsYearly}
           isYearly
         />
+        {isMobile && (
+          <div className="MobilePriceContainer">
+            <span>${price}.00 </span>
+            <span>{isYearly ? " / year" : " / month"}</span>
+          </div>
+        )}
         <Toggle
           id="yearly"
           checked={isYearly}

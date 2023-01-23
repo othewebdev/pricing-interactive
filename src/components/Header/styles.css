@@ -17,3 +17,9 @@ p {
   color: hsl(227, 35%, 25%);
   margin: 36px 0;
 }
+
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 28px;
+  }
+}
