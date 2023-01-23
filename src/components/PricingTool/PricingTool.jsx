@@ -4,29 +4,17 @@ import "./styles.css";
 import Toggle from "../Toggle/Toggle";
 import IconTick from "../../images/icon-check";
 
-const PricingTool = () => {
+const PricingTool = ({ isMobile }) => {
   const [price, setPrice] = useState(8);
   const [pageviews, setPageviews] = useState("10k");
   const [isYearly, setIsYearly] = useState(false);
   const [isMonthly, setMonthly] = useState(price);
-  const [isMobile, setIsMobile] = useState(false);
+
   const optionLabels = ["yes", "no"];
 
   const handleButton = () => {
     window.location.reload(false);
   };
-
-  const handleResize = () => {
-    if (window.innerWidth < 720) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-  });
 
   useEffect(() => {
     switch (price) {
@@ -55,12 +43,10 @@ const PricingTool = () => {
       <div className="Top">
         <div className="Header">
           <span className="Pageviews">{pageviews} pageviews</span>
-          {!isMobile && (
-            <div className="PriceContainer">
-              <span>${isYearly ? price * 0.75 : price}.00 </span>
-              <span>{isYearly ? " / year" : " / month"}</span>
-            </div>
-          )}
+          <div className="PriceContainer">
+            <span>${isYearly ? price * 0.75 : price}.00 </span>
+            <span>{isYearly ? " / year" : " / month"}</span>
+          </div>
         </div>
         <Slider
           currentPrice={price}

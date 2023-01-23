@@ -1,9 +1,3 @@
-/* .Container--mobile {
-  background-color: white;
-  min-height: 480px;
-  min-width: 640px;
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap");
 
 .Container {
@@ -57,7 +51,7 @@ hr {
 
 .Bottom {
   padding: 0 24px;
-  color: hsl(227, 35%, 25%);
+  color: hsl(225, 20%, 60%);
   font-size: 15px;
   font-weight: 600;
   display: flex;
@@ -79,7 +73,7 @@ hr {
   align-self: center;
   text-align: center;
   height: 45px;
-  width: 185px;
+  width: 200px;
   border-radius: 25px;
   border: none;
   background-color: hsl(227, 35%, 25%);
@@ -99,6 +93,7 @@ hr {
 }
 
 .MobilePriceContainer {
+  display: none;
   font-weight: 800;
   margin: 25px 0;
 }
@@ -115,5 +110,22 @@ hr {
   }
   .Header {
     justify-content: center;
+  }
+  .Bottom {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .TrialBtn {
+    margin-bottom: 25px;
+  }
+  p {
+    font-size: 15px;
+  }
+  .PriceContainer {
+    display: none;
+  }
+  .MobilePriceContainer {
+    display: block;
   }
 }

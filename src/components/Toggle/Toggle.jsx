@@ -24,7 +24,8 @@ const Toggle = ({ id, checked, onChange, optionLabels, isMobile }) => {
         </label>
       </div>
       <label>Yearly Billing</label>
-      <small className="discount">{isMobile ? "-25%" : "25% yearly"}</small>
+      <small className="discount">25% yearly</small>
+      <small className="discount-mobile">-25%</small>
     </div>
   );
 };
